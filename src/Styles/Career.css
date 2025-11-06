@@ -1,0 +1,79 @@
+.career {
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #ffe8f0 0%, #fff0f5 100%);
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.career-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.career h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.career > p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.why-choose {
+  margin-top: 3rem;
+}
+
+.why-choose h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.why-choose > p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefit-card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .career {
+    padding: 2rem;
+  }
+
+  .career h2 {
+    font-size: 2rem;
+  }
+}
