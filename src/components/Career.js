@@ -31,7 +31,7 @@ function Career() {
         {/* Contact Section */}
         <div className="contact-section">
           <h3>Get In Touch</h3>
-          <p>Ready to join our team? Reach out to us today!</p>
+          <p>Ready to join our team? Reach out to us today..</p>
 
           <div className="contact-info">
             <div className="contact-item">
