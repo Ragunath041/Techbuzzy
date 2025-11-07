@@ -153,7 +153,7 @@ function ContactModal({ isOpen, onClose }) {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+1 (555) 123-4567"
+                  placeholder="Enter your phone number"
                   required
                   disabled={loading}
                 />

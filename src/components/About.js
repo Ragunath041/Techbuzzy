@@ -1,5 +1,7 @@
 import '../Styles/About.css';
 import aboutImg from '../assets/images/about_img.png';
+import '../Styles/GlobalStyles.css'
+
 
 function About() {
   return (

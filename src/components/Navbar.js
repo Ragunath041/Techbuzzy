@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Styles/Navbar.css'
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/image.png';
 import ContactModal from './ContactModal';
 
 function Navbar() {
@@ -11,14 +12,16 @@ function Navbar() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src={logo} alt="Techbuzzy" />
+            <Link to="/">
+              <img src={logo} alt="Techbuzzy" />
+            </Link>
           </div>
           <ul className="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#career">Career</a></li>
-            <li><a href="#blog">Blog</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/career">Career</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
             <li>
               <button 
                 className="contact-btn"

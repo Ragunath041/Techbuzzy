@@ -1,4 +1,6 @@
 import '../Styles/BlogModal.css';
+import '../Styles/GlobalStyles.css'
+
 
 function BlogModal({ blog, onClose }) {
   return (

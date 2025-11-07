@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import '../Styles/Blogs.css';
 import BlogModal from './BlogModal';
+import '../Styles/GlobalStyles.css'
+
 
 function Blog() {
   const [blogs, setBlogs] = useState([]);

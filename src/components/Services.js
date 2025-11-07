@@ -1,87 +1,153 @@
+import React, { useState } from 'react';
 import '../Styles/Services.css';
+import '../Styles/GlobalStyles.css';
+import ContactModal from './ContactModal';
+
+// Import SVG and image assets
+import WebDevSvg from '../assets/images/web_dev.svg';
+import CloudSvg from '../assets/images/cloud.svg';
+import AiSvg from '../assets/images/ai.svg';
+import CyberSvg from '../assets/images/cyber.svg';
+import QaImage from '../assets/images/qa.png';
+
 function Services() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const services = [
+    {
+      id: 1,
+      icon: WebDevSvg,
+      type: 'svg',
+      iconClass: 'icon-webdev',
+      title: 'Software Development',
+      description: 'Custom software solutions tailored to your business needs',
+      features: [
+        'Website & Web App Development (React, Angular, Node.js)',
+        'Enterprise Software Solutions (.NET, Java, Python)',
+        'Mobile App Development (iOS, Android, Flutter)',
+        'API & Microservices Development',
+        'Maintenance & Support'
+      ],
+      tech: ['React', 'Node.js', 'Python', 'Django', '.NET', 'Flutter', 'MySQL', 'MongoDB']
+    },
+    {
+      id: 2,
+      icon: CloudSvg,
+      type: 'svg',
+      iconClass: 'icon-cloud',
+      title: 'Cloud Services',
+      description: 'Scalable cloud infrastructure for modern applications',
+      features: [
+        'Cloud Architecture & Consulting',
+        'Cloud Migration & Optimization',
+        'DevOps & CI/CD Automation',
+        'Data Warehousing & Analytics (Snowflake, BigQuery, Redshift)',
+        'Backup & Disaster Recovery'
+      ],
+      tech: ['AWS', 'Azure', 'GCP', 'Snowflake', 'Terraform', 'Docker', 'Kubernetes']
+    },
+    {
+      id: 3,
+      icon: QaImage,
+      type: 'image',
+      iconClass: 'icon-qa',
+      title: 'Software Testing & QA',
+      description: 'Comprehensive quality assurance and testing services',
+      features: [
+        'Manual & Automation Testing',
+        'Functional & Regression Testing',
+        'Performance & Load Testing',
+        'API & Integration Testing',
+        'Security & Penetration Testing',
+        'Mobile App Testing'
+      ],
+      tech: ['Selenium', 'JMeter', 'Postman', 'Playwright', 'Cypress', 'Jenkins']
+    },
+    {
+      id: 4,
+      icon: AiSvg,
+      type: 'svg',
+      iconClass: 'icon-ai',
+      title: 'AI & Data Services',
+      description: 'Advanced analytics and machine learning solutions',
+      features: [
+        'Predictive Analytics & Machine Learning',
+        'NLP (Chatbots, Sentiment Analysis)',
+        'Computer Vision',
+        'AI-based Process Automation',
+        'Data Engineering & Data Visualization'
+      ],
+      tech: ['Python', 'TensorFlow', 'PyTorch', 'Power BI', 'Snowflake', 'Databricks']
+    },
+    {
+      id: 5,
+      icon: CyberSvg,
+      type: 'svg',
+      iconClass: 'icon-cyber',
+      title: 'Cyber Security & Networking',
+      description: 'Comprehensive security and network solutions',
+      features: [
+        'Network Security & Firewall Management',
+        'Vulnerability Assessment & Penetration Testing (VAPT)',
+        'Cloud Security (AWS, Azure, GCP)',
+        'Endpoint Protection & 24/7 Threat Monitoring',
+        'SIEM & Log Analytics for incident detection',
+        'Business Continuity & Disaster Recovery (BCP/DR)',
+        'Network Design, Configuration & Performance Optimization'
+      ],
+      tech: ['AWS Security', 'Azure Security', 'Fortinet', 'Palo Alto', 'Splunk']
+    }
+  ];
+
   return (
-    <section className="services" id="services">
-      <div className="services-container">
-        <div className="service-card">
-          <div className="service-icon">💻</div>
-          <h3>Software Development</h3>
-          <p>Services Include:</p>
-          <ul>
-            <li>Website & Web App Development (React, Angular, Node.js)</li>
-            <li>Enterprise Software Solutions (.NET, Java, Python)</li>
-            <li>Mobile App Development (iOS, Android, Flutter)</li>
-            <li>API & Microservices Development</li>
-            <li>Maintenance & Support</li>
-          </ul>
-          <p className="tech-label"><strong>Tools & Technologies:</strong></p>
-          <p>React | Node.js | Python | Django | .NET | Flutter | MySQL | MongoDB</p>
+    <>
+      <section className="services" id="services">
+        <div className="services-header">
+          <h2>Our Services</h2>
+          <p>
+            Cutting-edge technology solutions designed to accelerate your business growth 
+            and deliver measurable results
+          </p>
         </div>
 
-        <div className="service-card">
-          <div className="service-icon">☁️</div>
-          <h3>Cloud Services</h3>
-          <p>Services Include:</p>
-          <ul>
-            <li>Cloud Architecture & Consulting</li>
-            <li>Cloud Migration & Optimization</li>
-            <li>DevOps & CI/CD Automation</li>
-            <li>Data Warehousing & Analytics (Snowflake, BigQuery, Redshift)</li>
-            <li>Backup & Disaster Recovery</li>
-          </ul>
-          <p className="tech-label"><strong>Tools & Technologies:</strong></p>
-          <p>AWS | Azure | GCP | Snowflake | Terraform | Docker | Kubernetes</p>
-        </div>
+        <div className="services-container">
+          {services.map(service => (
+            <div key={service.id} className="service-card">
+              <div className="service-icon">
+                <img 
+                  src={service.icon} 
+                  alt={service.title}
+                  className={`icon-img ${service.iconClass}`}
+                />
+              </div>
+              
+              <h3>{service.title}</h3>
+              <p style={{ color: '#666', marginBottom: '1rem', fontSize: '0.95rem' }}>
+                {service.description}
+              </p>
 
-        <div className="service-card">
-          <div className="service-icon">✓</div>
-          <h3>Software Testing & QA</h3>
-          <p>Services Include:</p>
-          <ul>
-            <li>Manual & Automation Testing</li>
-            <li>Functional & Regression Testing</li>
-            <li>Performance & Load Testing</li>
-            <li>API & Integration Testing</li>
-            <li>Security & Penetration Testing</li>
-            <li>Mobile App Testing</li>
-          </ul>
-          <p className="tech-label"><strong>Tools & Technologies:</strong></p>
-          <p>Selenium | JMeter | Postman | Playwright | Cypress | Jenkins</p>
-        </div>
+              <ul>
+                {service.features.map((feature, idx) => (
+                  <li key={idx}>{feature}</li>
+                ))}
+              </ul>
 
-        <div className="service-card">
-          <div className="service-icon">🤖</div>
-          <h3>AI & Data Services</h3>
-          <p>Services Include:</p>
-          <ul>
-            <li>Predictive Analytics & Machine Learning</li>
-            <li>NLP (Chatbots, Sentiment Analysis)</li>
-            <li>Computer Vision</li>
-            <li>AI-based Process Automation</li>
-            <li>Data Engineering & Data Visualization</li>
-          </ul>
-          <p className="tech-label"><strong>Tools & Platforms:</strong></p>
-          <p>Python | TensorFlow | PyTorch | Power BI | Snowflake | Databricks</p>
+              <div className="tech-label">Tools & Technologies</div>
+              <div className="tech-tags">
+                {service.tech.map((tech, idx) => (
+                  <span key={idx} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
 
-        <div className="service-card">
-          <div className="service-icon">🔒</div>
-          <h3>Cyber Security & Networking</h3>
-          <p>Services Include:</p>
-          <ul>
-            <li>Network Security & Firewall Management</li>
-            <li>Vulnerability Assessment & Penetration Testing (VAPT)</li>
-            <li>Cloud Security (AWS, Azure, GCP)</li>
-            <li>Endpoint Protection & 24/7 Threat Monitoring</li>
-            <li>SIEM & Log Analytics for incident detection</li>
-            <li>Business Continuity & Disaster Recovery (BCP/DR)</li>
-            <li>Network Design, Configuration & Performance Optimization</li>
-          </ul>
-          <p className="tech-label"><strong>Tools & Technologies:</strong></p>
-          <p>AWS Security | Azure Security | Fortinet | Palo Alto | Splunk</p>
-        </div>
-      </div>
-    </section>
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
+    </>
   );
 }
 

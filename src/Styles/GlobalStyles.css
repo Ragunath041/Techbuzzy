@@ -1,0 +1,326 @@
+
+
+:root {
+  /* PRIMARY COLORS */
+  --primary-dark: #1a0033;
+  --primary-purple: #552586;
+  --primary-light: #9969C7;
+  --accent-gold: #c0a080;
+  --accent-gold-light: #e8d4b8;
+  
+  /* NEUTRAL PALETTE */
+  --bg-dark: #0f0f15;
+  --bg-light: #f8f7fb;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-light: #999999;
+  --border-color: rgba(0, 0, 0, 0.08);
+  
+  /* TYPOGRAPHY */
+  --font-family: 'Segoe UI', Trebuchet MS, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 800;
+  
+  /* SPACING */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* BORDER RADIUS */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 50px;
+  
+  /* SHADOWS */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.3);
+  
+  /* TRANSITIONS */
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+   =========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-heavy);
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-medium);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: var(--font-weight-light);
+}
+
+/* ==========================================
+   BUTTONS - UNIFIED
+   =========================================== */
+
+.btn {
+  padding: 1.1rem 2.5rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  transition: var(--transition-smooth);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: var(--shadow-md);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+.btn:hover::before {
+  opacity: 1;
+  animation: shimmer 0.6s;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Primary Button - Gold Metallic */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 50%, var(--accent-gold) 100%);
+  color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(192, 160, 128, 0.4);
+  background: linear-gradient(135deg, var(--accent-gold-light) 0%, #f5e5d0 50%, var(--accent-gold-light) 100%);
+}
+
+/* Secondary Button - Glass Effect */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+/* Light Button - For light backgrounds */
+.btn-light {
+  background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 50%, #f0f0f0 100%);
+  color: var(--primary-dark);
+  border: 1px solid #e0e0e0;
+}
+
+.btn-light:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #ffffff 100%);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-gold);
+}
+
+/* ==========================================
+   CARDS - UNIFIED
+   =========================================== */
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: rgba(192, 160, 128, 0.3);
+}
+
+.card-premium {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 247, 251, 0.95) 100%);
+  border: 1px solid rgba(192, 160, 128, 0.2);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(192, 160, 128, 0.1) 0%, rgba(232, 212, 184, 0.1) 100%);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ==========================================
+   SECTIONS - UNIFIED
+   =========================================== */
+
+section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header h2 {
+  background: linear-gradient(120deg, var(--primary-dark) 0%, var(--primary-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-header p {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-md);
+}
+
+/* ==========================================
+   GRID & LAYOUT
+   =========================================== */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-auto { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+/* ==========================================
+   HIGHLIGHT / ACCENT TEXT
+   =========================================== */
+
+.highlight {
+  background: linear-gradient(120deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-heavy);
+}
+
+.highlight-purple {
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 1024px) {
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.2rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.4rem; }
+  
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .grid { gap: var(--spacing-md); }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  
+  .btn {
+    width: 100%;
+    padding: 0.95rem 1.5rem;
+  }
+}

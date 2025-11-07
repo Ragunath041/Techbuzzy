@@ -1,6 +1,6 @@
 .career {
   padding: 4rem 3rem;
-  background: linear-gradient(135deg, #ffe8f0 0%, #fff0f5 100%);
+  background: linear-gradient(135deg, #f8f7fb 0%, #ffffff 100%);
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
@@ -12,15 +12,20 @@
 }
 
 .career h2 {
+  background: linear-gradient(120deg, #1a0033 0%, #552586 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 1rem;
-  color: #1a1a1a;
 }
 
 .career > p {
   font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 3rem;
+  color: #555555;
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .why-choose {
@@ -30,32 +35,36 @@
 .why-choose h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: #1a0033;
+  font-weight: 700;
 }
 
 .why-choose > p {
-  color: #555;
+  color: #555555;
   margin-bottom: 2rem;
+  font-weight: 300;
 }
 
 .benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .benefit-card {
   padding: 2rem;
-  background-color: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f7fb 100%);
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(192, 160, 128, 0.2);
 }
 
 .benefit-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(192, 160, 128, 0.5);
 }
 
 .benefit-icon {
@@ -65,15 +74,109 @@
 
 .benefit-card h4 {
   font-size: 1.2rem;
-  color: #1a1a1a;
+  color: #1a0033;
+  font-weight: 700;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f7fb 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(192, 160, 128, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contact-section h3 {
+  font-size: 1.8rem;
+  color: #1a0033;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.contact-section > p {
+  color: #555555;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(192, 160, 128, 0.08) 0%, rgba(232, 212, 184, 0.08) 100%);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(192, 160, 128, 0.2);
+}
+
+.contact-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: rgba(192, 160, 128, 0.5);
+  background: linear-gradient(135deg, rgba(192, 160, 128, 0.15) 0%, rgba(232, 212, 184, 0.15) 100%);
+}
+
+.contact-item h4 {
+  font-size: 1.1rem;
+  color: #1a0033;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.contact-item a {
+  font-size: 1.1rem;
+  background: linear-gradient(120deg, #c0a080 0%, #e8d4b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.contact-item a:hover {
+  filter: brightness(1.2);
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
   .career {
     padding: 2rem;
   }
-
+  
   .career h2 {
     font-size: 2rem;
   }
+  
+  .contact-section {
+    padding: 2rem;
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.contact-item a {
+  color: #552586;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.contact-item a:hover {
+  color: #c0a080;
+  border-bottom: 2px solid #c0a080;
+  text-decoration: underline;
 }
