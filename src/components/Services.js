@@ -122,7 +122,7 @@ function Services() {
               </div>
               
               <h3>{service.title}</h3>
-              <p style={{ color: '#666', marginBottom: '1rem', fontSize: '0.95rem' }}>
+              <p style={{ color: '#ffffffff', marginBottom: '1rem', fontSize: '0.95rem' }}>
                 {service.description}
               </p>
 

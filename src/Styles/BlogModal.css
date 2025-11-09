@@ -13,21 +13,23 @@
 }
 
 .blog-modal-content {
-  background: white;
+  background: var(--bg-dark);
   border-radius: 10px;
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 40px rgba(107, 78, 113, 0.4);
+  border: 1px solid var(--primary-purple);
 }
 
 .modal-close {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: white;
-  border: none;
+  background: var(--primary-dark);
+  border: 1px solid var(--primary-purple);
+  color: var(--text-primary);
   font-size: 2rem;
   cursor: pointer;
   width: 40px;
@@ -37,11 +39,12 @@
   align-items: center;
   justify-content: center;
   z-index: 1001;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(181, 126, 220, 0.2);
 }
 
 .modal-close:hover {
-  background-color: #f0f0f0;
+  background-color: var(--primary-purple);
+  border-color: var(--accent-gold);
 }
 
 .modal-image {
@@ -63,7 +66,11 @@
 .modal-body h2 {
   font-size: 2rem;
   margin: 0 0 20px 0;
-  color: #333;
+  color: var(--primary-light);
+  background: linear-gradient(120deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .modal-tags {
@@ -74,8 +81,8 @@
 }
 
 .tag-large {
-  background-color: #4CAF50;
-  color: white;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--primary-light) 100%);
+  color: var(--bg-dark);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -83,7 +90,7 @@
 }
 
 .modal-content {
-  color: #555;
+  color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.8;
 }

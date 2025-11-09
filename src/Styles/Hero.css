@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 6rem 4rem;
-  background: linear-gradient(135deg, #1a0033 0%, #552586 30%, #9969C7 70%, #bb86fc 100%);
+  background-color: #2D1B3B;
   max-width: 1400px;
   margin: 0 auto;
   gap: 4rem;
@@ -18,7 +18,7 @@
   position: absolute;
   width: 1200px;
   height: 1200px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 70%);
+  background: radial-gradient(circle, rgba(175, 13, 13, 0.907) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 70%);
   top: -300px;
   right: -400px;
   z-index: 1;
@@ -80,6 +80,44 @@
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
+}
+
+.hero-buttons .primary-button {
+  padding: 0.75rem 2rem;
+  background: #B57EDC;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(181, 126, 220, 0.3);
+}
+
+.hero-buttons .secondary-button {
+  padding: 0.75rem 2rem;
+  background: rgba(181, 126, 220, 0.1);
+  color: #41076a;
+  border: 1px solid #690cab;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero-buttons .primary-button:hover {
+  background: #ac69de;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(181, 126, 220, 0.4);
+}
+
+.hero-buttons .secondary-button:hover {
+  background: rgba(181, 126, 220, 0.15);
+  border-color: #ac69de;
+  color: #ac69de;
+  transform: translateY(-1px);
 }
 
 .hero-image {

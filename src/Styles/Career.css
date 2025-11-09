@@ -1,6 +1,6 @@
 .career {
   padding: 4rem 3rem;
-  background: linear-gradient(135deg, #f8f7fb 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
@@ -12,7 +12,7 @@
 }
 
 .career h2 {
-  background: linear-gradient(120deg, #1a0033 0%, #552586 100%);
+  background: linear-gradient(120deg, var(--accent-gold-light) 0%, var(--accent-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -23,7 +23,7 @@
 
 .career > p {
   font-size: 1.1rem;
-  color: #555555;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-weight: 300;
 }
@@ -35,12 +35,12 @@
 .why-choose h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #1a0033;
+  color: var(--primary-light);
   font-weight: 700;
 }
 
 .why-choose > p {
-  color: #555555;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-weight: 300;
 }
@@ -54,27 +54,28 @@
 
 .benefit-card {
   padding: 2rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f7fb 100%);
+  background: linear-gradient(135deg, rgba(43, 27, 59, 0.95) 0%, rgba(26, 15, 35, 0.95) 100%);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(107, 78, 113, 0.15);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(192, 160, 128, 0.2);
+  border: 1px solid var(--primary-purple);
 }
 
 .benefit-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  border-color: rgba(192, 160, 128, 0.5);
+  box-shadow: 0 15px 40px rgba(181, 126, 220, 0.2);
+  border-color: var(--accent-gold);
 }
 
 .benefit-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: var(--accent-gold);
 }
 
 .benefit-card h4 {
   font-size: 1.2rem;
-  color: #1a0033;
+  color: var(--primary-light);
   font-weight: 700;
 }
 
@@ -82,21 +83,21 @@
 .contact-section {
   margin-top: 4rem;
   padding: 3rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f7fb 100%);
+  background: linear-gradient(135deg, rgba(43, 27, 59, 0.98) 0%, rgba(26, 15, 35, 0.98) 100%);
   border-radius: 12px;
-  border: 1px solid rgba(192, 160, 128, 0.2);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--primary-purple);
+  box-shadow: 0 8px 24px rgba(107, 78, 113, 0.2);
 }
 
 .contact-section h3 {
   font-size: 1.8rem;
-  color: #1a0033;
+  color: var(--primary-light);
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .contact-section > p {
-  color: #555555;
+  color: var(--text-secondary);
   margin-bottom: 2rem;
   font-size: 1.1rem;
   font-weight: 300;
@@ -113,28 +114,28 @@
   text-align: center;
   padding: 2rem;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(192, 160, 128, 0.08) 0%, rgba(232, 212, 184, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(107, 78, 113, 0.3) 0%, rgba(43, 27, 59, 0.3) 100%);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(192, 160, 128, 0.2);
+  border: 1px solid var(--primary-purple);
 }
 
 .contact-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-  border-color: rgba(192, 160, 128, 0.5);
-  background: linear-gradient(135deg, rgba(192, 160, 128, 0.15) 0%, rgba(232, 212, 184, 0.15) 100%);
+  box-shadow: 0 12px 28px rgba(181, 126, 220, 0.15);
+  border-color: var(--accent-gold);
+  background: linear-gradient(135deg, rgba(107, 78, 113, 0.4) 0%, rgba(43, 27, 59, 0.4) 100%);
 }
 
 .contact-item h4 {
   font-size: 1.1rem;
-  color: #1a0033;
+  color: var(--primary-light);
   margin-bottom: 0.8rem;
   font-weight: 700;
 }
 
 .contact-item a {
   font-size: 1.1rem;
-  background: linear-gradient(120deg, #c0a080 0%, #e8d4b8 100%);
+  background: linear-gradient(120deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -168,7 +169,7 @@
 
 
 .contact-item a {
-  color: #552586;
+  color: var(--accent-gold);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -176,7 +177,7 @@
 }
 
 .contact-item a:hover {
-  color: #c0a080;
-  border-bottom: 2px solid #c0a080;
+  color: var(--accent-gold-light);
+  border-bottom: 2px solid var(--accent-gold);
   text-decoration: underline;
 }
